@@ -10,7 +10,7 @@
     <link rel = "Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <link rel="Stylesheet" href="ContactUs.css">
+    <link rel="Stylesheet" href="Location.css">
    
     
 
@@ -18,7 +18,6 @@
     </head>
 
 <body>
-    
     
     
   <!-- Menu-->
@@ -48,50 +47,24 @@
         
     <!-- End Menu-->
 
+    
    
-    
-    <br>
-    
-   <div class = "pusher">
-       <div class= "pusher" >
-    <div class = "ui text container" id = "contactInfo">
-    <p> Have any questions or concerns ? Please do not hesitate to contact us ! Let us hear you  </p>
-        <i class = "ui heart pink icon "> </i>
-        <p> <i class = "green phone icon"></i>Telephone : (415)415-4154</p>
-        <p> <i class = "red mail icon"></i>Email : BabyProdigy@wecare.com (Customer Service)</p>
-         
-        <p> <i class = "blue facebook icon"></i>Facebook : www.facebook.com/BabyProdigy</p>
-        <p> <i class = "yellow warehouse icon"></i>Adress : 1000 Racoon Ave , San Francisco , CA , 94123</p>
-    </div>
-    
-    <br>
-    <br>
-    <br>
-    <form class="ui static form" id = "form">
-  <div class="field">
-      
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name">
-  </div>
-  <div class="field">
-    <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name">
-  </div>
-  <div class="field">
-  </div>
-      <label>Comment</label>
-        <div class="ui reply form tiny">
-    <div class="field">
-      <textarea></textarea>
-    </div>
-    <div class="ui primary submit labeled icon button">
-      <i class="icon edit"></i> Add Comment
-    </div>
-  </div>
-</form>
-    </div>
-       </div>
 
+    
+    <div class="pusher">
+    <div class = "ui container" id = "container1">
+    
+    
+     <br>
+     <h2 id ="location"> In order to Locate us , let us locate you first !  <i class = "ui blue search icon"></i> </h2> 
+        </div>
+        <div id = "location2">
+        <button id = "locateMe" onclick="getLocation()">Where Am I ?</button>
+
+<p id="demo"></p>
+        </div>
+      
+    </div>
         
      
     
@@ -100,24 +73,29 @@
    
     
    
-    <script> $('.ui.accordion').accordion();</script>
+    
     <script> 
     $('#toggle').click(function(){
         $('.ui.sidebar').sidebar('toggle');
-        
-        
-    });
+    }); 
     </script>
+    
+    <script>
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+  
 </body>
 
 </html>
-
-
-
-
-
-    
-    
-
-
-
