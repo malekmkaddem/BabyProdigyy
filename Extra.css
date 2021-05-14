@@ -18,9 +18,10 @@ background-image: url("extra.jpg");
     
     #menu{
         
-        display:contents;
-       font-size:60%;
-        
+      
+        display:flex;
+       font-size:50%;
+        width: 40%;
         
     }
        
@@ -104,7 +105,7 @@ p  {
    width: 100%;
     color: red;
         font-family: cursive;
-        background-color: gray;
+        
     }
     
  

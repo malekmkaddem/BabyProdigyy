@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>BabyProdigy</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,23 +16,20 @@
 
     
     </head>
-
 <body>
-    
-    
-   <!-- Menu-->
+    <!-- Menu-->
     
     <div class = "ui vertical left inverted sidebar menu" id = "menu">
-    <a class="BabyProdigy" href="index.html">BabyProdigy</a>
-        <a class="item" id = "item" href = "Products.html">Products</a>
-        <a class="item" id = "item" href="Location.html">
-    Location
+    <a class="item" id ="item5" href="index.html"><i class="home icon"></i>Home </a>
+        <a class="item" id = "item4" href = "Products.html"><i class="home icon"></i>Products</a>
+        <a class="item" id = "item3" href="Location.html">
+    <i class="map icon"></i>Location
   </a>
-        <a class="item" id = "item" href="Extra.html">
-    Extra
+        <a class="item" id = "item1" href="Extra.html">
+    <i class="gem icon"></i>Extra
   </a>
-        <a class="item" id = "item" href="ContactUs.html">
-    Contact us
+        <a class="item" id = "item2" href="ContactUs.html">
+    <i class="phone icon"></i>Contact us
   </a>
     
     </div> 
@@ -46,55 +43,51 @@
     </div>
         
     <!-- End Menu-->
+<div class = "pusher">
     
-   
-
+    <div class = "ui container"></div>
     
-    <div class="pusher">
-    <div class = "ui container" id = "container1">
-    
-    <p class ="ui big header"> Our products</p>
-     <br>
-     <h2 id ="location"> You can locate us simply by allowing your location to be visible.   </h2> 
-        </div>
-        <div id = "location">
-        <button onclick="getLocation()">Try It</button>
+    <a href="#" id ="get_location">get location </a>
+    <div id = "map">
 
-<p id="demo"></p>
-        </div>
-      
-
-    </div>
+        <iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLDpvVrxMw8ig7FSUQvHNHsvvQBCSARtk&q=Space+Needle,Seattle+WA">
+</iframe>
         
-     
+    </div>
     
-   <!-- Payment Method code here(Debit/credit cards)--> 
+    </div>
     
-   
     
-   
+    
+    </body>
     
     <script> 
     $('#toggle').click(function(){
         $('.ui.sidebar').sidebar('toggle');
-    }); 
+        
+    });
     </script>
     
     <script>
-var x = document.getElementById("demo");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-</body>
-
-</html>
+        var c = function(pos){
+            var lat = pos.coords.latitude,
+                long = pos.coords.longitude,
+                coords = lat + ','+long;
+            document.getElementById('google_map').setAttribute('src','https://maps.google.com/?q=' +  coords + '&z=60&output=embed')
+            
+        }
+    document.getElementById('get_location').onclick = function(){
+        navigator.geolocation.getCurrentPosition(c);
+        Return false;
+    }
+    
+    
+    
+    </script>
+    </html>

@@ -10,6 +10,12 @@
         line-height: 1.5;
         text-align: center;
     }
+    #menu{
+        display:flex;
+       font-size:50%;
+        width: 40%;
+    }
+    
     
     #contactInfo{
         font-size:100%;
@@ -17,7 +23,7 @@
         text-align:center;
     display:lex;
     width: 100%;
-    border: 5px solid white;
+    border: 5px solid pink;
     font-family: cursive;
 }
 
@@ -39,5 +45,12 @@
         background-color: black;
     
     }
-    
+    #form{
+       margin: auto;
+  width: 50%;
+  border: 3px solid pink;
+  padding: 10px;
+        
+
+    }
 }
